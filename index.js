@@ -17,9 +17,9 @@ const port = process.env.PORT || 5000;
 ConnectDB();
 
 app.use(express.json());
-const frontCors = cors({ 
+const frontCors = cors();/*{ 
     origin: [process.env.ADMIN_URL, process.env.FRONT_URL, ] || ['http://localhost:3000', 'http://localhost:3001'] 
-});
+}*/
 const adminCors = cors({ origin: process.env.ADMIN_URL || 'http://localhost:3001' })
 
 app.use('/posts', frontCors, postRouter);
